@@ -39,12 +39,11 @@ console.log(findMin(someArray));
 
 //Task 3
 function filterArray(myArray, minVal, maxVal){
-	var arr = [];
-	var k=0;
+	var arr = [];	
 	for (var i = 0; i < myArray.length; i++){
-		if ((myArray[i] > minVal)&&(myArray[i] < maxVal)){
-			arr[k]=myArray[i];
-			k++;
+		const el=myArray[i];
+		if ((el > minVal)&&(el < maxVal)){
+			arr.push(el);
 		}
 		
 	}
@@ -56,9 +55,14 @@ console.log(filterArray(someArray, 0,50))
 
 //Task 4
 function wordsCounter(str) {
-  return str.split(" ").length;
+  str = str.replace(/[.,\/#!$%\^&\*;:{}=\-_`~()]/g,"");
+  str = str.replace(/[ ]{2,}/gi," ");  
+  str=str.trim();
+  return str.split(" ").length;	 
 }
-var arr = 'Hello, from Automaton team';
+var arr = 'Hello   sfd  ';
+
+
 console.log(wordsCounter(arr));
 
 //Task 5
